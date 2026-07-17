@@ -20,10 +20,10 @@ const siteData = {
 
   // ---- Action Buttons ----
   links: [
-    { label: 'Paper', url: 'https://arxiv.org/abs/xxxx.xxxxx', icon: '/icons/arxiv.svg' },
-    { label: 'Code', url: 'https://github.com/you/repo', icon: '/icons/github.svg' },
-    { label: 'Dataset', url: 'https://huggingface.co/datasets/peach-lab/webTrace', icon: '/icons/hf.svg' },
-    { label: 'Evaluation Space', url: 'https://huggingface.co/spaces/peach-lab/webTrace_eval', icon: '/icons/hf.svg' },
+    { label: 'Paper', url: 'https://arxiv.org/abs/xxxx.xxxxx', icon: '/WebTrace/icons/arxiv.svg' },
+    { label: 'Code', url: 'https://github.com/you/repo', icon: '/WebTrace/icons/github.svg' },
+    { label: 'Dataset', url: 'https://huggingface.co/datasets/peach-lab/webTrace', icon: '/WebTrace/icons/hf.svg' },
+    { label: 'Evaluation Space', url: 'https://huggingface.co/spaces/peach-lab/webTrace_eval', icon: '/WebTrace/icons/hf.svg' },
   ],
 
   // ---- Highlight Box (between buttons and abstract) ----
@@ -48,7 +48,7 @@ These results reveal a pressing dual-use privacy challenge for LLMs and establis
 
   dataPipeline: {
     // Full-width figure at top
-    figure: '/images/DATA_CONSTRUCTION.png',  
+    figure: '/WebTrace/images/DATA_CONSTRUCTION.png',  
     figureCaption: 'Figure 1: Overview of the four-stage data construction pipeline.',
 
     // 4.1 Data Construction
@@ -110,7 +110,7 @@ These results reveal a pressing dual-use privacy challenge for LLMs and establis
           title: 'Occupation Diversity',
           text: 'The 822 individuals span **183 distinct occupation categories**, of which 135 (74%) are singletons - occupied by exactly one person. The five most common categories are journalist (n=128), filmmaker (n=121), CEO/founder (n=101), professor (n=74), and actor (n=45).\n\nCoverage rate varies meaningfully across occupations. Journalists (mean 0.44) and authors (mean 0.43) exhibit higher coverage than actors (mean 0.25) or politicians (mean 0.25). Writing-oriented professions generate attributes — bylines, publication venues — that arise naturally in conversation about work.',
           visual: 'figure',
-          figure: '/images/Occupation_Diversity.png',
+          figure: '/WebTrace/images/Occupation_Diversity.png',
           figCaption: 'Figure 2: Mean attribute coverage rate by occupation (groups with n ≥ 15). Error bars denote standard error of the mean.',
         },
       ],
@@ -130,7 +130,7 @@ Search-enabled models form two performance bands. DeepSeek-V4-Flash, GLM-4.7, Ge
 
 **Parametric knowledge alone poses risk.** GPT-5.4-mini without search correctly re-identifies roughly one in five interviewees (precision 0.247, recall 0.221) - no retrieval needed. This suggests the model's pre-training data itself constitutes a privacy risk, enabling re-identification through reasoning over memorized biographical associations.`,
       figures: [
-        { src: '/images/Precision_Recall.png', caption: 'Figure 3: Transcript-level precision–recall trade-off across nine model configurations.' },
+        { src: '/WebTrace/images/Precision_Recall.png', caption: 'Figure 3: Transcript-level precision–recall trade-off across nine model configurations.' },
       ],
     },
     {
@@ -143,8 +143,8 @@ The confidence–precision curves mirror the aggregate performance bands. Lower-
 
 **Gemini-3-Flash is a notable exception.** Despite strong aggregate performance, it assigns Very High confidence unusually often (n=481) with only ≈0.70 precision at that level, revealing a systematic **overconfidence pattern**.`,
       figures: [
-        { src: '/images/confidence_report.png', caption: 'Figure 4: Confidence calibration curves. Grey dashed line and band denote ideal calibration (±0.1).' },
-        { src: '/images/Confidence_Distribution.png', caption: 'Figure 5: Confidence level distribution and over-/under-confidence rates.' },
+        { src: '/WebTrace/images/confidence_report.png', caption: 'Figure 4: Confidence calibration curves. Grey dashed line and band denote ideal calibration (±0.1).' },
+        { src: '/WebTrace/images/Confidence_Distribution.png', caption: 'Figure 5: Confidence level distribution and over-/under-confidence rates.' },
       ],
     },
     {
@@ -170,7 +170,7 @@ Among candidates that models output, the fraction that is incorrect is also high
 
 One explanation is that occupations differ in how uniquely their professional attributes identify an individual. A professor's institutional affiliation and publication record may jointly narrow the search to a single person, whereas an actor's credits are shared across large casts.`,
       figures: [
-        { src: '/images/occupation_heatmap.png', caption: 'Figure 6: Recall (left) and precision (right) by occupation category and model configuration. Rows sorted by mean recall (descending).' },
+        { src: '/WebTrace/images/occupation_heatmap.png', caption: 'Figure 6: Recall (left) and precision (right) by occupation category and model configuration. Rows sorted by mean recall (descending).' },
       ],
     },
     {
@@ -208,7 +208,7 @@ From a threat-modeling perspective, the most concerning finding is that **near-S
 
 Claude Sonnet 4.6 was evaluated on a 50-transcript subsample due to cost (~$0.85/transcript vs. <$0.10 for most others), achieving precision 55.3%, recall 42.0% (F1=0.477) with 502.5s average latency (directional only).`,
       figures: [
-        { src: '/images/Accuracy_Cost_Pareto.png', caption: 'Figure 7: Quality–cost Pareto analysis. Gemini-3-Flash and DeepSeek-V4-Flash match top F1 at roughly half the cost of GPT-5.4-mini.' },
+        { src: '/WebTrace/images/Accuracy_Cost_Pareto.png', caption: 'Figure 7: Quality–cost Pareto analysis. Gemini-3-Flash and DeepSeek-V4-Flash match top F1 at roughly half the cost of GPT-5.4-mini.' },
       ],
     },
   ],
