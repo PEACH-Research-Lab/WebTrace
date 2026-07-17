@@ -1,0 +1,118 @@
+.pipeline { padding: 2.5rem 0; border-bottom: 1px solid var(--c-border); }
+.pipeline h2 { margin-bottom: 1.5rem; }
+
+/* ---- Pipeline figure ---- */
+.pipeline__figure { margin: 0 0 2.5rem; }
+/* .pipeline__figure img { width: 100%; border-radius: 8px; border: 1px solid var(--c-border); } */
+.pipeline__figure img {
+  width: 85%;              /* 调这个数值控制宽度 */
+  display: block;
+  margin: 0 auto;          /* 水平居中 */
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+}
+.pipeline__figure figcaption { margin-top: .5rem; font-size: 1rem; color: var(--c-text-sec); text-align: center; }
+
+/* ---- §4.1 Generation ---- */
+.pipeline__generation { margin-bottom: 2.5rem; }
+.pipeline__generation h3 { font-size: 1.7rem; margin-bottom: .5rem; }
+.pipeline__gen-intro { font-size: 1.15rem; margin-bottom: 1rem; max-width: 1000px; }
+.pipeline__step { display: flex; gap: .85rem; align-items: flex-start; margin-bottom: .85rem; }
+.pipeline__step-num {
+  flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--c-accent); color: #fff;
+  font-size: .85rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.pipeline__step strong { font-size: 1.15rem; color: var(--c-text); display: block; margin-bottom: .1rem; }
+.pipeline__step p { font-size: 1.1rem; line-height: 1.65; margin: 0; }
+.pipeline__step p strong { display: inline; font-size: inherit; }
+
+/* ---- §4.2 Validation ---- */
+.pipeline__validation h3 { font-size: 1.7rem; margin-bottom: .4rem; }
+.pipeline__val-intro { font-size: 1.15rem; margin-bottom: 1.5rem; max-width: 780px; }
+
+/* ── Row: text left, visual right ── */
+.val-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--c-border);
+}
+.val-row:first-of-type { border-top: none; padding-top: 0; }
+
+.val-row__text h4 {
+  font-size: 1.15rem; font-weight: 700; color: var(--c-text);
+  margin-bottom: .6rem; display: flex; align-items: center; gap: .5rem;
+}
+.val-row__id {
+  font-family: var(--font-mono); font-size: .95rem; font-weight: 600;
+  color: var(--c-accent); background: var(--c-accent-light);
+  padding: .12rem .4rem; border-radius: 3px; flex-shrink: 0;
+}
+.val-row__text p {
+  font-size: 1.1rem; line-height: 1.72; margin-bottom: .6rem;
+  text-align: justify;
+}
+.val-row__text p:last-child { margin-bottom: 0; }
+.val-row__text strong { color: var(--c-text); font-weight: 600; }
+
+/* ── Confusion matrix ── */
+.val-matrix-wrap { padding-top: .2rem; }
+.val-matrix {
+  width: 100%; border-collapse: collapse;
+  font-size: 1.1rem; font-variant-numeric: tabular-nums;
+}
+.val-matrix th {
+  padding: .45rem .6rem; text-align: center;
+  font-weight: 600; font-size: 1.1rem; color: var(--c-text-sec);
+  border-bottom: 2px solid var(--c-border);
+}
+.val-matrix th:first-child { text-align: left; }
+.val-matrix td {
+  padding: .45rem .6rem; text-align: center;
+  border-bottom: 1px solid var(--c-border);
+}
+.val-matrix td:first-child { text-align: left; font-weight: 600; color: var(--c-text); font-size: 1.1rem; }
+.val-matrix__caption {
+  font-size: .85rem; color: var(--c-text-sec); margin-top: .5rem; line-height: 1.45;
+}
+
+/* ── Stacked bar ── */
+.val-bar-wrap { padding-top: .2rem; }
+.val-bar__title {
+  font-size: 1.1rem; font-weight: 600; color: var(--c-text);
+  margin-bottom: .5rem;
+}
+.val-bar {
+  display: flex; height: 28px; border-radius: 6px; overflow: hidden;
+  margin-bottom: .45rem;
+}
+.val-bar__seg {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 32px;
+}
+.val-bar__pct {
+  font-size: 1rem; font-weight: 600;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.val-bar__seg:last-child .val-bar__pct { color: #6b7280; text-shadow: none; }
+.val-bar__legend {
+  display: flex; gap: .75rem; flex-wrap: wrap;
+  font-size: 1.1rem; color: var(--c-text-sec);
+}
+.val-bar__legend i {
+  display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+  margin-right: 4px; vertical-align: -1px;
+}
+
+/* ── Figure ── */
+.val-fig { margin: 0; }
+.val-fig img { width: 100%; border-radius: 6px; border: 1px solid var(--c-border); }
+.val-fig figcaption { font-size: 1rem; color: var(--c-text-sec); margin-top: .4rem; line-height: 1.45; }
+
+@media(max-width:768px) {
+  .val-row { grid-template-columns: 1fr; gap: 1.2rem; }
+}

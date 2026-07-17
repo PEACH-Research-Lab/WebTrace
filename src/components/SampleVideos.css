@@ -1,0 +1,74 @@
+.results-sec { padding: 2.5rem 0; border-bottom: 1px solid var(--c-border); background: var(--c-bg-alt);}
+.results-sec h2 { margin-bottom: 1rem; }
+
+/* Tab bar */
+.results-tabs {
+  display: flex; gap: .3rem; flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.results-tab {
+  font-family: var(--font);
+  font-size: 1.15rem; font-weight: 500;
+  padding: .4rem .85rem;
+  border: 1px solid transparent; border-radius: 6px;
+  background: none; color: var(--c-text-sec);
+  cursor: pointer; transition: all .15s;
+  white-space: nowrap;
+}
+.results-tab:hover { background: var(--c-bg-alt); color: var(--c-text); }
+.results-tab--on {
+  background: var(--c-accent-light); color: var(--c-accent);
+  border-color: var(--c-accent); font-weight: 600;
+}
+
+/* Panel */
+.results-panel__title {
+  font-size: 1.7rem; font-weight: 700; color: var(--c-text);
+  margin-bottom: 1rem;
+}
+
+/* ── Default: side-by-side when figures exist ── */
+.results-panel__layout--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.results-panel__text p {
+  font-size: 1.1rem; line-height: 1.78;
+  margin-bottom: .75rem; text-align: justify;
+}
+.results-panel__text p:last-child { margin-bottom: 0; }
+.results-panel__text strong { color: var(--c-text); font-weight: 600; }
+
+/* Figures column (side-by-side mode) */
+.results-panel__figures {
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+
+/* ── Stacked: figures laid out horizontally below text ── */
+.results-panel__figures-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* Shared figure styles */
+.results-fig { margin: 0; }
+.results-fig img {
+  width: 100%; border-radius: 6px; border: 1px solid var(--c-border);
+}
+.results-fig figcaption {
+  font-size: 1rem; color: var(--c-text-sec);
+  margin-top: .4rem; line-height: 1.45;
+}
+
+@media(max-width:768px) {
+  .results-panel__layout--split { grid-template-columns: 1fr; }
+  .results-panel__figures-row { grid-template-columns: 1fr; }
+  .results-tab { font-size: .78rem; padding: .35rem .6rem; }
+}
