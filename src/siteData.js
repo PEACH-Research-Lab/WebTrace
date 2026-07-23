@@ -109,8 +109,8 @@ These results reveal a pressing dual-use privacy challenge for LLMs and establis
           id: '3.',
           title: 'Occupation Diversity',
           text: 'The 822 individuals span **183 distinct occupation categories**, of which 135 (74%) are singletons - occupied by exactly one person. The five most common categories are journalist (n=128), filmmaker (n=121), CEO/founder (n=101), professor (n=74), and actor (n=45).\n\nCoverage rate varies meaningfully across occupations. Journalists (mean 0.44) and authors (mean 0.43) exhibit higher coverage than actors (mean 0.25) or politicians (mean 0.25). Writing-oriented professions generate attributes — bylines, publication venues — that arise naturally in conversation about work.',
-          visual: 'figure',
-          figure: '/WebTrace/images/Occupation_Diversity.png',
+          visual: 'video',
+          video: '/WebTrace/videos/coverage_rate_animation.mp4',
           figCaption: 'Figure 2: Mean attribute coverage rate by occupation (groups with n ≥ 15). Error bars denote standard error of the mean.',
         },
       ],
@@ -130,7 +130,7 @@ Search-enabled models form two performance bands. DeepSeek-V4-Flash, GLM-4.7, Ge
 
 **Parametric knowledge alone poses risk.** GPT-5.4-mini without search correctly re-identifies roughly one in five interviewees (precision 0.247, recall 0.221) - no retrieval needed. This suggests the model's pre-training data itself constitutes a privacy risk, enabling re-identification through reasoning over memorized biographical associations.`,
       figures: [
-        { src: '/WebTrace/images/Precision_Recall.png', caption: 'Figure 3: Transcript-level precision–recall trade-off across nine model configurations.' },
+        { src: '/WebTrace/videos/precision_recall_animation.mp4', type: 'video', caption: 'Figure 3: Transcript-level precision–recall trade-off across nine model configurations.' },
       ],
     },
     {

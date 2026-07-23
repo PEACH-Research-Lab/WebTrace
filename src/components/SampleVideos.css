@@ -59,9 +59,15 @@
 
 /* Shared figure styles */
 .results-fig { margin: 0; }
-.results-fig img {
+.results-fig img,
+.results-fig video {
   width: 100%; border-radius: 6px; border: 1px solid var(--c-border);
 }
+/* .results-fig video {
+  width: 100%;
+  height: auto;
+  display: block;
+} */
 .results-fig figcaption {
   font-size: 1rem; color: var(--c-text-sec);
   margin-top: .4rem; line-height: 1.45;

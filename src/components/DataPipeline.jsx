@@ -95,6 +95,14 @@ export default function DataPipeline({ data }) {
                     <figcaption>{sec.figCaption}</figcaption>
                   </figure>
                 )}
+
+                {sec.visual === 'video' && sec.video && (
+                <figure className="val-fig">
+                  <video src={sec.video} controls muted loop playsInline autoPlay preload="metadata"
+                    style={{ width: '100%', borderRadius: '6px', border: '1px solid #e2e8f0' }} />
+                  <figcaption>{sec.figCaption}</figcaption>
+                </figure>
+              )}
               </div>
             </div>
           ))}

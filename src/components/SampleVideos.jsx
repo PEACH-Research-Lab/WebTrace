@@ -39,7 +39,19 @@ export default function SampleVideos({ samples }) {
                 <div className="results-panel__figures-row">
                   {s.figures.map((fig, i) => (
                     <figure key={i} className="results-fig">
-                      <img src={fig.src} alt="" />
+                      {/* <img src={fig.src} alt="" /> */}
+                      {fig.type === 'video' ? (
+                        <video
+                          src={fig.src}
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : (
+                        <img src={fig.src} alt="" />
+                      )}
                       <figcaption>{fig.caption}</figcaption>
                     </figure>
                   ))}
@@ -58,7 +70,19 @@ export default function SampleVideos({ samples }) {
                 <div className="results-panel__figures">
                   {s.figures.map((fig, i) => (
                     <figure key={i} className="results-fig">
-                      <img src={fig.src} alt="" />
+                      {/* <img src={fig.src} alt="" /> */}
+                      {fig.type === 'video' ? (
+                        <video
+                          src={fig.src}
+                          controls
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : (
+                        <img src={fig.src} alt="" />
+                      )}
                       <figcaption>{fig.caption}</figcaption>
                     </figure>
                   ))}
